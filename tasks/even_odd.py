@@ -3,10 +3,8 @@ __all__ = (
 )
 
 
-def even_odd(arr: list[int]) -> float:
-    """
-    Функция возвращает отношение суммы четных элементов массив к сумме нечетных
-    Пример:
-    even_odd([1, 2, 3, 4, 5]) == 0.8889
-    """
-    raise NotImplementedError
+def even_odd(arglist) -> float:
+  if sum(arglist[1::2]) != 0:
+    return sum(arglist[1::2])/sum(arglist[0::2])
+  else:
+    return 0

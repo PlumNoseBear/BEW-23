@@ -1,5 +1,4 @@
 from typing import Any
-
 __all__ = (
     'Node',
     'Graph'
@@ -7,28 +6,28 @@ __all__ = (
 
 
 class Node:
-    def __init__(self, value: Any):
-        self.value = value
+  def __init__(self, name):
+      self.name=name
+      self.z, self.vertexes={},[]
+      self.z[self.name]=self.vertexes
 
-        self.outbound = []
-        self.inbound = []
-
-    def point_to(self, other: 'Node'):
-        self.outbound.append(other)
-        other.inbound.append(self)
-
-    def __str__(self):
-        return f'Node({repr(self.value)})'
-
-    __repr__ = __str__
-
+  def point_to(self, vertex_join):
+      self.vertexes.append(vertex_join.name)
+      self.z[self.name]=self.vertexes
+      return self.z
 
 class Graph:
-    def __init__(self, root: Node):
-        self._root = root
+  def __init__(self, root):
+    self.root=root
 
-    def dfs(self) -> list[Node]:
-        raise NotImplementedError
-
-    def bfs(self) -> list[Node]:
-        raise NotImplementedError
+  def dfs(self):
+          r = self.root
+          visited = []
+          stack = []
+                    
+          visited.append(r.name)
+          for value in a.z.values():
+            res=value
+          stack=stack+value
+          print(visited,  stack)
+          return

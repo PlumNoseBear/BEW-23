@@ -13,7 +13,18 @@ def seconds_to_str(seconds: int) -> str:
     93600 -> 01d02h00m00s
     """
     raise NotImplementedError
+    bagseconds=seconds
+    time=''
+    time=time_quant(time, bagseconds, 86400, 'd')
+    bagseconds=bagseconds%86400
+    time=time_quant(time, bagseconds, 3600, 'h')
+    bagseconds=bagseconds%3600
+    time=time_quant(time, bagseconds, 60, 'm')
+    bagseconds=bagseconds%60
+    time=time+f'{bagseconds:02}s'
+    return time
 
-
-
-
+def time_quant(qtime: str, remain: int, quant: int, stringadd: str) -> str :
+    if (qtime !='' or remain//quant > 0):
+        qtime=qtime+f'{remain//quant:02}{stringadd}'
+    return qtime

@@ -10,7 +10,7 @@ KT = TypeVar('KT')
 KV = TypeVar('KV')
 
 
-def flip_kv_vk(d: dict[KT, KV]) -> dict[KV, KT]:
+def flip_kv_vk(d):
     """
     Функция должна возвращать словарь, в котором в качестве ключей - значения
     переданного словаря, а в качестве значений - ключи.
@@ -23,10 +23,10 @@ def flip_kv_vk(d: dict[KT, KV]) -> dict[KV, KT]:
         'Москва': 'moscow',
     }
     """
-    raise NotImplementedError
+    return {y: x for x, y in d.items()}
 
 
-def flip_kv_vk_safe(d: dict[KT, KV]) -> dict[KV, list[KT]]:
+def flip_kv_vk_safe(d):
     """
     Функция должна возвращать словарь, в котором в качестве ключей - значения
     переданного словаря, а в качестве значений - массив ключей конфликтующих
@@ -39,4 +39,7 @@ def flip_kv_vk_safe(d: dict[KT, KV]) -> dict[KV, list[KT]]:
         '+3': ['Москва', 'Санкт-Петербург'],
     }
     """
-    raise NotImplementedError
+    z={}
+    for x, y in d.items():
+        z.setdefault(y,[]).append(x)
+    return z
