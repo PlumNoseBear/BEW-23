@@ -1,6 +1,10 @@
 def even_odd(arglist) -> float:
-  if sum(arglist[1::2]) != 0:
-    return sum(arglist[1::2])/sum(arglist[0::2])
-  else:
-    return 0
-
+  odds = 0
+  nodds=0
+  for i in arglist:
+    if i%2==0:
+      odds=odds+i
+    else:
+      nodds=nodds+i
+    
+  return odds/nodds if nodds !=0 else 0
