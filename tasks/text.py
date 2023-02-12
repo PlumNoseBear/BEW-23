@@ -1,10 +1,3 @@
-from typing import Optional
-
-__all__ = (
-    'find_shortest_longest_word',
-)
-
-
 def find_shortest_longest_word(text):
     """
     В переданном тексте вернуть слово имеющее наименьшую и наибольшую длину.

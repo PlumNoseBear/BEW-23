@@ -1,8 +1,6 @@
 __all__ = (
     'seconds_to_str',
 )
-
-
 def seconds_to_str(seconds: int) -> str:
     """
     Функция должна вернуть текстовое представление времени
@@ -12,7 +10,7 @@ def seconds_to_str(seconds: int) -> str:
     3700 -> 01h01m40s
     93600 -> 01d02h00m00s
     """
-    raise NotImplementedError
+    #raise NotImplementedError
     bagseconds=seconds
     time=''
     time=time_quant(time, bagseconds, 86400, 'd')
@@ -20,8 +18,11 @@ def seconds_to_str(seconds: int) -> str:
     time=time_quant(time, bagseconds, 3600, 'h')
     bagseconds=bagseconds%3600
     time=time_quant(time, bagseconds, 60, 'm')
-    bagseconds=bagseconds%60
-    time=time+f'{bagseconds:02}s'
+    if bagseconds==0:
+      time=time+'00s'
+    else:
+      bagseconds=bagseconds%60
+      time=time+f'{bagseconds:02}s'
     return time
 
 def time_quant(qtime: str, remain: int, quant: int, stringadd: str) -> str :
