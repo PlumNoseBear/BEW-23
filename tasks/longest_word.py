@@ -11,5 +11,5 @@ def longest_word(text):
     else:
       maxword =max(text.split(), key=len)
       minword =min(text.split(), key=len)
-    return print((minword,maxword))
+    return (minword,maxword)
 
