@@ -1,4 +1,4 @@
-def longest_word(text):
+def find_shortest_longest_word(text):
     """
     В переданном тексте вернуть слово имеющее наименьшую и наибольшую длину.
     Если такого слова нет - вернуть None
@@ -11,5 +11,4 @@ def longest_word(text):
     else:
       maxword =max(text.split(), key=len)
       minword =min(text.split(), key=len)
-    return (minword,maxword)
-
+    return minword, maxword)
