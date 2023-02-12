@@ -1,6 +1,3 @@
-__all__ = (
-    'seconds_to_str',
-)
 def seconds_to_str(seconds: int) -> str:
     """
     Функция должна вернуть текстовое представление времени
