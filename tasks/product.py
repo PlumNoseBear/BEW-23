@@ -1,10 +1,3 @@
-from typing import Any
-
-__all__ = (
-    'cartesian_product',
-)
-
-
 def cartesian_product(arr1, arr2) -> list:
     """
     Должна возвращать все пары элементы двух массивов:
