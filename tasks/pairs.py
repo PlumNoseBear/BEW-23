@@ -1,10 +1,3 @@
-from typing import Any
-
-__all__ = (
-    'corresponding_pairs',
-)
-
-
 def corresponding_pairs(arr1, arr2) -> list:
     """
     Функция должна возвращать соответствующие элементы двух массивов:
