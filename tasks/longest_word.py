@@ -1,10 +1,10 @@
 import re
 def find_shortest_longest_word(text):
-
+    words=[None, None]
     text = text.strip()
 
     if not text:
-        return (None, None)
+        return words[0], words[1]
     text=re.sub(r'\s+', ' ', text)
     words = re.split(r'\s+?', text)
     words.sort(key=lambda w:len(w))
