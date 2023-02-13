@@ -1,14 +1,24 @@
 def find_shortest_longest_word(text):
-    """
-    В переданном тексте вернуть слово имеющее наименьшую и наибольшую длину.
-    Если такого слова нет - вернуть None
-    """
+
     text = text.replace('\t',' ')
     text = text.replace('\n',' ')
     text = ''.join(filter(str.isprintable, text))
-    if len(text.replace(' ', '')) == 0:
-      maxword, minword = None, None
-    else:
-      maxword = max(text.split(), key=len)
-      minword = min(text.split(), key=len)
-    return minword, maxword
+
+    words = text.split()
+    if len(words) == 0:
+        return (None, None)
+    min_len = len(words[0])
+    max_len = len(words[0])
+    min_word = words[0]
+    max_word = words[0]
+
+    for word in words:
+        if len(word) < min_len:
+            min_len = len(word)
+            min_word = word
+
+        if len(word) > max_len:
+            max_len = len(word) 
+            max_word = word
+
+    return (min_word, max_word)
