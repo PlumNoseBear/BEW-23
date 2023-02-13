@@ -12,4 +12,3 @@ def find_shortest_longest_word(text):
       maxword = max(text.split(), key=len)
       minword = min(text.split(), key=len)
     return minword, maxword
-
