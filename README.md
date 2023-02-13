@@ -1,4 +1,4 @@
-# Задачи KTS Metaclass: Python
+# Задачи KTS Metaclass: Python [![Check homework](https://github.com/PlumNoseBear/BEW-23/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/PlumNoseBear/BEW-23/actions/workflows/pipeline.yaml)
 
 ## 1. Переворачивание словаря
 
